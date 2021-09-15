@@ -1,0 +1,36 @@
+<!--
+  Bloqueia uso do Ctrl+A; copiar ou imprimir.
+
+  Adaptado de :
+  https://stackoverflow.com/questions/15394957/how-to-disable-ctrl-c-v-using-javascript-for-both-internet-explorer-and-firefox
+  http://www.linhadecodigo.com.br/artigo/3652/como-bloquear-o-botao-ctrl-e-impedir-impressao-de-pagina-com-javascript.aspx#ixzz76SUoOpPK
+  
+  
+  https://ferramentasblog.com/como-bloquear-ctrlc-e-ctrlv-e-impedir-copia-de-conteudo-do-blog/
+-->
+
+<html>
+  <head>
+    <script language='JavaScript'>
+      function Botao_Direito(){
+        return false;        
+      }
+
+      function Inibe_Control() {
+        var tecla = String.fromCharCode(event.keyCode).toLowerCase();
+
+        if (event.ctrlKey && (tecla == 'c' || tecla == 'a' || tecla == 'p')) {
+          alert("Ação bloqueada");
+
+          event.returnValue = false; // Desativa o control.
+        }    
+      }
+
+      document.onkeydown = Inibe_Control;
+
+    </script>
+  </head>
+  Não permite pressionar CRTL+A<br>
+  ou pressionar CRTL+C<br>
+  ou pressionar CRTL+P.
+</html>
