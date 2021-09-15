@@ -1,0 +1,34 @@
+<!--
+  Bloqueia a seleção do conteúdo usando o mouse ou botão direito.
+
+  Adaptado de :
+  https://stackoverflow.com/questions/15394957/how-to-disable-ctrl-c-v-using-javascript-for-both-internet-explorer-and-firefox
+  http://www.linhadecodigo.com.br/artigo/3652/como-bloquear-o-botao-ctrl-e-impedir-impressao-de-pagina-com-javascript.aspx#ixzz76SUoOpPK
+  
+  
+  https://ferramentasblog.com/como-bloquear-ctrlc-e-ctrlv-e-impedir-copia-de-conteudo-do-blog/
+-->
+
+<html>
+  <head>
+    <script language='JavaScript'>
+      function Desativa(e){
+        return false
+      }
+      function Ativa(){
+        return true
+      }
+
+      function Botao_Direito(){
+        return false;        
+      }
+
+      document.onmousedown=Desativa;
+      document.onclick=Ativa;
+
+      document.oncontextmenu = Botao_Direito; //Bloqueia o botão direito.
+    </script>
+  </head>
+  Não permite selecionar o texto<br>
+  ou botão direito.
+</html>
